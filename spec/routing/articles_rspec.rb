@@ -17,7 +17,7 @@ RSpec.describe ArticleController, type: :request do
     it "return a proper JSON" do
       article = FactoryBot.create(:article)
       get "/articles"
-      body = JSON.parse(response.body)
+      body = JSON.parse(response.body).deep_symbolize_keys
       expect(body).to eq(
         data: [
           {
