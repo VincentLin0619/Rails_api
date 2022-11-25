@@ -22,7 +22,7 @@ RSpec.describe ArticleController, type: :request do
         data: [
           {
             id: article.id,
-            type: "article",
+            type: "articles",
             attributes: {
               title: article.title,
               content: article.content,
