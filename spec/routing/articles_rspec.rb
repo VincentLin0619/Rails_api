@@ -17,11 +17,10 @@ RSpec.describe ArticleController, type: :request do
     it "return a proper JSON" do
       article = FactoryBot.create(:article)
       get "/articles"
-      body = JSON.parse(response.body).deep_symbolize_keys
-      expect(body).to eq(
-        data: [
+      expect(json_data).to eq(
+        [
           {
-            id: article.id,
+            id: article.id.to_s,
             type: "articles",
             attributes: {
               title: article.title,
