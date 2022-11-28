@@ -15,7 +15,7 @@ RSpec.describe ArticleController, type: :request do
       expect(response).to have_http_status(:ok)
     end
     it "return a proper JSON" do
-      article = FactoryBot.create(:article)
+      article = create(:article)
       get "/articles"
       expect(json_data).to eq(
         [

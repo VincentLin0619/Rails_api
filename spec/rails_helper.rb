@@ -31,7 +31,9 @@ rescue ActiveRecord::PendingMigrationError => e
 end
 RSpec.configure do |config|
   # 自定義引入的檔案
+  # 省略FactoryBot方法前都需要先打(Factory).method
   config.include FactoryBot::Syntax::Methods
+  # 引入Support裡面的ApiHelper模組
   config.include ApiHelpers
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
